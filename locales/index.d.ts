@@ -11585,6 +11585,16 @@ export interface Locale extends ILocale {
          */
         "serverHostPlaceholder": string;
     };
+    /**
+     * てすとだよ～ん
+     */
+    "_G_Test1": string;
+    "_G_MIDIKakiko": {
+        /**
+         * テストです。
+         */
+        "placeHolder": string;
+    };
 }
 declare const locales: {
     [lang: string]: Locale;
