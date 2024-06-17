@@ -69,3 +69,7 @@ tsdoc-metadata.json
 
 # VSCode addon
 .favorites.json
+
+# python venv
+
+*venv/*

@@ -2657,3 +2657,11 @@ _mediaControls:
   pip: "ピクチャインピクチャ"
   playbackRate: "再生速度"
   loop: "ループ再生"
+
+
+# ここから勝手に追加したもの
+_G_Test1: "てすとだよ～ん"
+
+# MIDIカキコ
+_G_MIDIKakiko:
+  placeHolder: "テストです。"

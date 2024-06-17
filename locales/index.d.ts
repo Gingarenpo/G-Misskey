@@ -9972,6 +9972,16 @@ export interface Locale extends ILocale {
          */
         "loop": string;
     };
+    /**
+     * てすとだよ～ん
+     */
+    "_G_Test1": string;
+    "_G_MIDIKakiko": {
+        /**
+         * テストです。
+         */
+        "placeHolder": string;
+    };
 }
 declare const locales: {
     [lang: string]: Locale;

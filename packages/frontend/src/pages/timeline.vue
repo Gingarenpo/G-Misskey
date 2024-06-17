@@ -13,6 +13,9 @@ SPDX-License-Identifier: AGPL-3.0-only
 					{{ i18n.ts._timelineDescription[src] }}
 				</MkInfo>
 				<MkPostForm v-if="defaultStore.reactiveState.showFixedPostForm.value" :class="$style.postForm" class="post-form _panel" fixed style="margin-bottom: var(--margin);"/>
+				<midi_kakiko>
+				</midi_kakiko>
+				
 				<div v-if="queue > 0" :class="$style.new"><button class="_buttonPrimary" :class="$style.newButton" @click="top()">{{ i18n.ts.newNoteRecived }}</button></div>
 				<div :class="$style.tl">
 					<MkTimeline
@@ -40,6 +43,7 @@ import MkTimeline from '@/components/MkTimeline.vue';
 import MkInfo from '@/components/MkInfo.vue';
 import MkPostForm from '@/components/MkPostForm.vue';
 import MkHorizontalSwipe from '@/components/MkHorizontalSwipe.vue';
+import midi_kakiko from '@/components/midi_kakiko/midi_kakiko.vue';
 import { scroll } from '@/scripts/scroll.js';
 import * as os from '@/os.js';
 import { misskeyApi } from '@/scripts/misskey-api.js';

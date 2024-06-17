@@ -47,6 +47,8 @@ import { RoleTimelineChannelService } from './api/stream/channels/role-timeline.
 import { ReversiChannelService } from './api/stream/channels/reversi.js';
 import { ReversiGameChannelService } from './api/stream/channels/reversi-game.js';
 
+//import { KakikoService } from './api/endpoints/midi_kakiko/KakikoService.js';
+
 @Module({
 	imports: [
 		EndpointsModule,
@@ -92,6 +94,8 @@ import { ReversiGameChannelService } from './api/stream/channels/reversi-game.js
 		UserListChannelService,
 		OpenApiServerService,
 		OAuth2ProviderService,
+		
+		//KakikoService,
 	],
 	exports: [
 		ServerService,

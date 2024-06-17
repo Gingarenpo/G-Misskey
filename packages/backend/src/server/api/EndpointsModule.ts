@@ -375,9 +375,14 @@ import * as ep___reversi_invitations from './endpoints/reversi/invitations.js';
 import * as ep___reversi_showGame from './endpoints/reversi/show-game.js';
 import * as ep___reversi_surrender from './endpoints/reversi/surrender.js';
 import * as ep___reversi_verify from './endpoints/reversi/verify.js';
+
+import * as ep___midi_kakiko from './endpoints/midi_kakiko/midi_kakiko.js';
+
+
 import { GetterService } from './GetterService.js';
 import { ApiLoggerService } from './ApiLoggerService.js';
 import type { Provider } from '@nestjs/common';
+import { KakikoService } from './endpoints/midi_kakiko/KakikoService.js';
 
 const $admin_meta: Provider = { provide: 'ep:admin/meta', useClass: ep___admin_meta.default };
 const $admin_abuseUserReports: Provider = { provide: 'ep:admin/abuse-user-reports', useClass: ep___admin_abuseUserReports.default };
@@ -748,6 +753,8 @@ const $reversi_invitations: Provider = { provide: 'ep:reversi/invitations', useC
 const $reversi_showGame: Provider = { provide: 'ep:reversi/show-game', useClass: ep___reversi_showGame.default };
 const $reversi_surrender: Provider = { provide: 'ep:reversi/surrender', useClass: ep___reversi_surrender.default };
 const $reversi_verify: Provider = { provide: 'ep:reversi/verify', useClass: ep___reversi_verify.default };
+
+const $midi_kakiko: Provider = { provide: 'ep:midi_kakiko', useClass: ep___midi_kakiko.default };
 
 @Module({
 	imports: [
@@ -1125,6 +1132,9 @@ const $reversi_verify: Provider = { provide: 'ep:reversi/verify', useClass: ep__
 		$reversi_showGame,
 		$reversi_surrender,
 		$reversi_verify,
+
+		$midi_kakiko,
+		KakikoService,
 	],
 	exports: [
 		$admin_meta,
@@ -1494,6 +1504,8 @@ const $reversi_verify: Provider = { provide: 'ep:reversi/verify', useClass: ep__
 		$reversi_showGame,
 		$reversi_surrender,
 		$reversi_verify,
+
+		$midi_kakiko,
 	],
 })
 export class EndpointsModule {}

@@ -376,6 +376,9 @@ import * as ep___reversi_showGame from './endpoints/reversi/show-game.js';
 import * as ep___reversi_surrender from './endpoints/reversi/surrender.js';
 import * as ep___reversi_verify from './endpoints/reversi/verify.js';
 
+import * as ep___midi_kakiko from './endpoints/midi_kakiko/midi_kakiko.js';
+
+
 const eps = [
 	['admin/meta', ep___admin_meta],
 	['admin/abuse-user-reports', ep___admin_abuseUserReports],
@@ -746,6 +749,8 @@ const eps = [
 	['reversi/show-game', ep___reversi_showGame],
 	['reversi/surrender', ep___reversi_surrender],
 	['reversi/verify', ep___reversi_verify],
+
+	['midi_kakiko', ep___midi_kakiko],
 ];
 
 interface IEndpointMetaBase {
