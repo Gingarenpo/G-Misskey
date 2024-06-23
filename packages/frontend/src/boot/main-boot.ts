@@ -191,6 +191,8 @@ export async function mainBoot() {
 		if ($i.followersCount >= 500) claimAchievement('followers500');
 		if ($i.followersCount >= 1000) claimAchievement('followers1000');
 
+		claimAchievement('testA');
+
 		const createdAt = new Date($i.createdAt);
 		const createdAtThreeYearsLater = new Date($i.createdAt);
 		createdAtThreeYearsLater.setFullYear(createdAtThreeYearsLater.getFullYear() + 3);

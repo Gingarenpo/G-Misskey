@@ -701,7 +701,7 @@ export interface Locale extends ILocale {
      */
     "flagAsBotDescription": string;
     /**
-     * にゃああああああああああああああ！！！！！！！！！！！！
+     * CATCATCAT
      */
     "flagAsCat": string;
     /**
@@ -6399,6 +6399,20 @@ export interface Locale extends ILocale {
                 "description": string;
                 /**
                  * これくらいの　おべんとばこに　🤯　🤯　ちょっとつめて
+                 */
+                "flavor": string;
+            };
+            "_testA": {
+                /**
+                 * テスト実績
+                 */
+                "title": string;
+                /**
+                 * テストダヨーン
+                 */
+                "description": string;
+                /**
+                 * 特に何もなく到達可能
                  */
                 "flavor": string;
             };

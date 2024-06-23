@@ -89,6 +89,8 @@ export const ACHIEVEMENT_TYPES = [
 	'tutorialCompleted',
 	'bubbleGameExplodingHead',
 	'bubbleGameDoubleExplodingHead',
+
+	'testA',
 ] as const;
 
 @Injectable()

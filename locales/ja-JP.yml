@@ -171,7 +171,7 @@ cacheRemoteSensitiveFiles: "リモートのセンシティブなファイルを�
 cacheRemoteSensitiveFilesDescription: "この設定を無効にすると、リモートのセンシティブなファイルはキャッシュせず直リンクするようになります。"
 flagAsBot: "Botとして設定"
 flagAsBotDescription: "このアカウントがプログラムによって運用される場合は、このフラグをオンにします。オンにすると、反応の連鎖を防ぐためのフラグとして他の開発者に役立ったり、Misskeyのシステム上での扱いがBotに合ったものになります。"
-flagAsCat: "にゃああああああああああああああ！！！！！！！！！！！！"
+flagAsCat: "CATCATCAT"
 flagAsCatDescription: "にゃにゃにゃ？？"
 flagShowTimelineReplies: "タイムラインにノートへの返信を表示する"
 flagShowTimelineRepliesDescription: "オンにすると、タイムラインにユーザーのノート以外にもそのユーザーの他のノートへの返信を表示します。"
@@ -1655,6 +1655,11 @@ _achievements:
       title: "ダブル🤯"
       description: "バブルゲームで最も大きいモノを2つ同時に出した"
       flavor: "これくらいの　おべんとばこに　🤯　🤯　ちょっとつめて"
+    
+    _testA:
+      title: "テスト実績"
+      description: "テストダヨーン"
+      flavor: "特に何もなく到達可能"
 
 _role:
   new: "ロールの作成"

@@ -1,6 +1,6 @@
 {
-	"name": "misskey",
-	"version": "2024.5.0",
+	"name": "g-misskey",
+	"version": "2024.5.0-G-Fix1",
 	"codename": "nasubi",
 	"repository": {
 		"type": "git",
