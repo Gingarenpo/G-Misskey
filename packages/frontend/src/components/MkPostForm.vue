@@ -935,6 +935,7 @@ async function saveServerDraft(options: {
 	});
 }
 
+
 function isAnnoying(text: string): boolean {
 	return text.includes('$[x2') ||
 		text.includes('$[x3') ||
@@ -943,17 +944,17 @@ function isAnnoying(text: string): boolean {
 		text.includes('$[position');
 }
 
-async function uploadFiles() {
-	await uploader.upload();
-
-	for (const uploadedItem of uploader.items.value.filter(x => x.uploaded != null)) {
-		files.value.push(uploadedItem.uploaded!);
-		uploader.removeItem(uploadedItem);
+async function post(ev?: MouseEvent) {
+	if (useCw.value && (cw.value == null || cw.value.trim() === '')) {
+		os.alert({
+			type: 'error',
+			text: i18n.ts.cwNotationRequired,
+		});
+		focus();
+		return;
 	}
-}
 
-async function post(ev?: PointerEvent) {
-	if (ev != null) {
+	if (ev) {
 		const el = (ev.currentTarget ?? ev.target) as HTMLElement | null;
 
 		if (el && prefer.s.animation) {
