@@ -8,6 +8,7 @@ import { lang } from '@/config.js';
 export const versatileLang = (lang ?? 'ja-JP').replace('ja-KS', 'ja-JP');
 
 let _dateTimeFormat: Intl.DateTimeFormat;
+let _dateFormat: Intl.DateTimeFormat;
 try {
 	_dateTimeFormat = new Intl.DateTimeFormat(versatileLang, {
 		year: 'numeric',
@@ -16,6 +17,12 @@ try {
 		hour: 'numeric',
 		minute: 'numeric',
 		second: 'numeric',
+	});
+
+	_dateFormat = new Intl.DateTimeFormat(versatileLang, {
+		year: 'numeric',
+		month: 'numeric',
+		day: 'numeric',
 	});
 } catch (err) {
 	console.warn(err);
@@ -30,8 +37,17 @@ try {
 		minute: 'numeric',
 		second: 'numeric',
 	});
+
+	_dateFormat = new Intl.DateTimeFormat('en-US', {
+		year: 'numeric',
+		month: 'numeric',
+		day: 'numeric',
+	});
 }
 export const dateTimeFormat = _dateTimeFormat;
+
+// 日付のみの書式を追加
+export const dateFormat = _dateFormat;
 
 export const timeZone = dateTimeFormat.resolvedOptions().timeZone;
 

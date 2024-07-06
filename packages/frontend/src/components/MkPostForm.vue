@@ -413,6 +413,7 @@ function addTag(tag: string) {
 }
 
 function focus() {
+	console.log(textareaEl.value);
 	if (textareaEl.value) {
 		textareaEl.value.focus();
 		textareaEl.value.setSelectionRange(textareaEl.value.value.length, textareaEl.value.value.length);
@@ -721,6 +722,7 @@ async function post(ev?: MouseEvent) {
 			type: 'error',
 			text: i18n.ts.cwNotationRequired,
 		});
+		focus();
 		return;
 	}
 
@@ -735,7 +737,10 @@ async function post(ev?: MouseEvent) {
 		}
 	}
 
-	if (props.mock) return;
+	if (props.mock) {
+		focus();
+		return;
+	}
 
 	const annoying =
 		text.value.includes('$[x2') ||
@@ -761,8 +766,14 @@ async function post(ev?: MouseEvent) {
 			}],
 		});
 
-		if (canceled) return;
-		if (result === 'cancel') return;
+		if (canceled) {
+			focus();
+			return;
+		}
+		if (result === 'cancel') {
+			focus();
+			return;
+		}
 		if (result === 'home') {
 			visibility.value = 'home';
 		}
@@ -882,6 +893,8 @@ async function post(ev?: MouseEvent) {
 			text: err.message + '\n' + (err as any).id,
 		});
 	});
+
+	focus();
 }
 
 function cancel() {

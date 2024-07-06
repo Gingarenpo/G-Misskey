@@ -9,6 +9,7 @@ SPDX-License-Identifier: AGPL-3.0-only
 	<template v-else-if="mode === 'relative'">{{ relative }}</template>
 	<template v-else-if="mode === 'absolute'">{{ absolute }}</template>
 	<template v-else-if="mode === 'detail'">{{ absolute }} ({{ relative }})</template>
+	<template v-else-if="mode === 'custom-relative'">{{ custom_relative }}</template>
 </time>
 </template>
 
@@ -16,13 +17,15 @@ SPDX-License-Identifier: AGPL-3.0-only
 import isChromatic from 'chromatic/isChromatic';
 import { onMounted, onUnmounted, ref, computed } from 'vue';
 import { i18n } from '@/i18n.js';
-import { dateTimeFormat } from '@/scripts/intl-const.js';
+import { dateTimeFormat, dateFormat } from '@/scripts/intl-const.js';
 
 const props = withDefaults(defineProps<{
 	time: Date | string | number | null;
 	origin?: Date | null;
-	mode?: 'relative' | 'absolute' | 'detail';
+	mode?: 'custom-relative' | 'relative' | 'absolute' | 'detail';
+	// props 追加
 	colored?: boolean;
+	relative_period?: number | null;
 }>(), {
 	origin: isChromatic() ? () => new Date('2023-04-01T00:00:00Z') : null,
 	mode: 'relative',
@@ -71,6 +74,19 @@ const relative = computed<string>(() => {
 		ago.value < -60 ? i18n.tsx._timeIn.minutes({ n: (~~(-ago.value / 60)).toString() }) :
 		i18n.tsx._timeIn.seconds({ n: (~~(-ago.value % 60)).toString() })
 	);
+});
+
+const custom_relative = computed<string>(() => {
+	// relative_period秒前の投稿は基本的にすべてabsoluteにする
+	if (props.mode !== "custom-relative") return '';
+	
+	let relative_period = props.relative_period == null ? 86400 : props.relative_period;
+	if (ago.value >= relative_period) {
+		return dateFormat.format(_time);
+	}
+	
+	// そうでない場合は単にrelativeの値を返す
+	return relative.value;
 });
 
 let tickId: number;

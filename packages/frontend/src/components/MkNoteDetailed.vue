@@ -33,7 +33,7 @@ SPDX-License-Identifier: AGPL-3.0-only
 		<div :class="$style.renoteInfo">
 			<button ref="renoteTime" class="_button" :class="$style.renoteTime" @click="showRenoteMenu()">
 				<i v-if="isMyRenote" class="ti ti-dots" style="margin-right: 4px;"></i>
-				<MkTime :time="note.createdAt"/>
+				<MkTime mode="custom-relative" :time="note.createdAt"/>
 			</button>
 			<span v-if="note.visibility !== 'public'" style="margin-left: 0.5em;" :title="i18n.ts._visibility[note.visibility]">
 				<i v-if="note.visibility === 'home'" class="ti ti-home"></i>

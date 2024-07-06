@@ -18,10 +18,10 @@ SPDX-License-Identifier: AGPL-3.0-only
 	</div>
 	<div :class="$style.info">
 		<div v-if="mock">
-			<MkTime :time="note.createdAt" colored/>
+			<MkTime mode="custom-relative" :time="note.createdAt" colored/>
 		</div>
 		<MkA v-else :to="notePage(note)">
-			<MkTime :time="note.createdAt" colored/>
+			<MkTime mode="custom-relative" :time="note.createdAt" colored/>
 		</MkA>
 		<span v-if="note.visibility !== 'public'" style="margin-left: 0.5em;" :title="i18n.ts._visibility[note.visibility]">
 			<i v-if="note.visibility === 'home'" class="ti ti-home"></i>
