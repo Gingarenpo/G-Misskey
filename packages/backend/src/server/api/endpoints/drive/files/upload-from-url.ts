@@ -15,7 +15,7 @@ export const meta = {
 
 	limit: {
 		duration: ms('1hour'),
-		max: 60,
+		max: 10485760,
 	},
 
 	description: 'Request the server to download a new drive file from the specified URL.',

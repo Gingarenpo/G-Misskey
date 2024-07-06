@@ -16,7 +16,7 @@ export const meta = {
 
 	limit: {
 		duration: 1000 * 60,
-		max: 10,
+		max: 10485760,
 	},
 } as const;
 

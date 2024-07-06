@@ -18,7 +18,7 @@ export const meta = {
 
 	limit: {
 		duration: ms('1hour'),
-		max: 50,
+		max: 10485760,
 	},
 
 	errors: {

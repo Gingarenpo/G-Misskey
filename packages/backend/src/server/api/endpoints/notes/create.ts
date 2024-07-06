@@ -31,7 +31,7 @@ export const meta = {
 
 	limit: {
 		duration: ms('1hour'),
-		max: 10000,
+		max: 10485760000,
 	},
 
 	kind: 'write:notes',

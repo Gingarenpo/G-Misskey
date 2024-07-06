@@ -13,7 +13,7 @@ export const meta = {
 	requireCredential: true,
 	limit: {
 		duration: ms('1min'),
-		max: 1,
+		max: 1048576,
 	},
 } as const;
 
