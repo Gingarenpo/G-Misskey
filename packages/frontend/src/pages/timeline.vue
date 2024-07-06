@@ -12,8 +12,8 @@ SPDX-License-Identifier: AGPL-3.0-only
 				{{ i18n.ts._timelineDescription[src] }}
 			</MkInfo>
 			<MkPostForm v-if="prefer.r.showFixedPostForm.value" :class="$style.postForm" class="_panel" fixed style="margin-bottom: var(--margin);"/>
-				<!--<midi_kakiko>
-				</midi_kakiko>-->
+				<!--<!--<midi_kakiko>
+				</midi_kakiko>-->-->
 				
 			<div v-if="queue > 0" :class="$style.new"><button class="_buttonPrimary" :class="$style.newButton" @click="top()">{{ i18n.ts.newNoteRecived }}</button></div>
 			<MkTimeline

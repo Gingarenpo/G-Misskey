@@ -792,6 +792,14 @@ function isAnnoying(text: string): boolean {
 		text.includes('$[position');
 }
 
+function isAnnoying(text: string): boolean {
+	return text.includes('$[x2') ||
+		text.includes('$[x3') ||
+		text.includes('$[x4') ||
+		text.includes('$[scale') ||
+		text.includes('$[position');
+}
+
 async function post(ev?: MouseEvent) {
 	if (useCw.value && (cw.value == null || cw.value.trim() === '')) {
 		os.alert({
