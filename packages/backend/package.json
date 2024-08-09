@@ -209,7 +209,7 @@
 		"@types/node": "20.12.7",
 		"@types/node-fetch": "3.0.3",
 		"@types/nodemailer": "6.4.15",
-		"@types/oauth": "0.9.4",
+		"@types/oauth": "0.9.5",
 		"@types/oauth2orize": "1.11.5",
 		"@types/oauth2orize-pkce": "0.1.2",
 		"@types/pg": "8.11.5",
