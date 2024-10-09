@@ -516,6 +516,7 @@ export class FileServerService {
 		{ state: 'remote'; fileRole: 'thumbnail' | 'webpublic' | 'original'; file: MiDriveFile; filename: string; url: string; mime: string; ext: string | null; path: string; cleanup: () => void; }
 		| { state: 'stored_internal'; fileRole: 'thumbnail' | 'webpublic' | 'original'; file: MiDriveFile; filename: string; mime: string; ext: string | null; path: string; }
 		| '404'
+		| '401'
 		| '204'
 	> {
 		// Fetch drive file
@@ -525,7 +526,9 @@ export class FileServerService {
 			.orWhere('file.webpublicAccessKey = :webpublicAccessKey', { webpublicAccessKey: key })
 			.getOne();
 
-		if (file == null) return '404';
+		console.log(`!!!!!!!!!!!!!!!!!! file = ${file}!!!!!!!!!!!!!!!!!`);
+
+		if (file == null) return '401';
 
 		const isThumbnail = file.thumbnailAccessKey === key;
 		const isWebpublic = file.webpublicAccessKey === key;
@@ -556,6 +559,7 @@ export class FileServerService {
 				path,
 			};
 		}
+
 
 		return {
 			state: 'stored_internal',

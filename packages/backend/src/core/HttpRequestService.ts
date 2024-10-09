@@ -118,7 +118,7 @@ export class HttpRequestService {
 			headers: {
 				Accept: 'application/activity+json, application/ld+json; profile="https://www.w3.org/ns/activitystreams"',
 			},
-			timeout: 5000,
+			timeout: 10000,
 			size: 1024 * 256,
 		}, {
 			throwErrorWhenResponseNotOk: true,
@@ -135,7 +135,7 @@ export class HttpRequestService {
 			headers: Object.assign({
 				Accept: accept,
 			}, headers ?? {}),
-			timeout: 5000,
+			timeout: 10000,
 			size: 1024 * 256,
 		});
 
@@ -170,7 +170,7 @@ export class HttpRequestService {
 			validators: [],
 		},
 	): Promise<Response> {
-		const timeout = args.timeout ?? 5000;
+		const timeout = args.timeout ?? 1000;
 
 		const controller = new AbortController();
 		setTimeout(() => {
