@@ -10650,6 +10650,10 @@ export interface Locale extends ILocale {
         };
         "_remote": {
             /**
+             * 選択行の詳細
+             */
+            "selectionRowDetail": string;
+            /**
              * 選択行をインポート
              */
             "importSelectionRows": string;
