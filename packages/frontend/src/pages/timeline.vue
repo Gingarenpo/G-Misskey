@@ -16,20 +16,19 @@ SPDX-License-Identifier: AGPL-3.0-only
 				</midi_kakiko>-->
 				
 			<div v-if="queue > 0" :class="$style.new"><button class="_buttonPrimary" :class="$style.newButton" @click="top()">{{ i18n.ts.newNoteRecived }}</button></div>
-			<div :class="$style.tl">
-				<MkTimeline
-					ref="tlComponent"
-					:key="src + withRenotes + withReplies + onlyFiles + withSensitive"
-					:src="src.split(':')[0]"
-					:list="src.split(':')[1]"
-					:withRenotes="withRenotes"
-					:withReplies="withReplies"
-					:withSensitive="withSensitive"
-					:onlyFiles="onlyFiles"
-					:sound="true"
-					@queue="queueUpdated"
-				/>
-			</div>
+			<MkTimeline
+				ref="tlComponent"
+				:key="src + withRenotes + withReplies + onlyFiles + withSensitive"
+				:class="$style.tl"
+				:src="src.split(':')[0]"
+				:list="src.split(':')[1]"
+				:withRenotes="withRenotes"
+				:withReplies="withReplies"
+				:withSensitive="withSensitive"
+				:onlyFiles="onlyFiles"
+				:sound="true"
+				@queue="queueUpdated"
+			/>
 		</MkSpacer>
 	</MkStickyContainer>
 </div>
