@@ -1,9 +1,7 @@
 {
-	"name": "misskey",
-	"version": "2025.4.0",
 	"name": "g-misskey",
-	"version": "2024.5.0-G-Fix1",
-	"codename": "nasubi",
+	"version": "2025.5.0-G-Fix1",
+	"codename": "ZCU",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/Gingarenpo/G-Misskey"
@@ -53,17 +51,19 @@
 		"lodash": "4.17.21"
 	},
 	"dependencies": {
+		"@bull-board/api": "6.9.0",
+		"@bull-board/fastify": "6.9.0",
 		"cssnano": "7.0.6",
+		"esbuild": "0.25.0",
 		"execa": "9.5.2",
 		"fast-glob": "3.3.3",
+		"glob": "11.0.1",
 		"ignore-walk": "7.0.0",
 		"js-yaml": "4.1.0",
 		"postcss": "8.5.3",
 		"tar": "7.4.3",
 		"terser": "5.39.0",
-		"typescript": "5.8.2",
-		"esbuild": "0.25.0",
-		"glob": "11.0.1"
+		"typescript": "5.8.2"
 	},
 	"devDependencies": {
 		"@misskey-dev/eslint-plugin": "2.1.0",
