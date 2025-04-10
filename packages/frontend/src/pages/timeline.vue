@@ -46,8 +46,6 @@ import MkPostForm from '@/components/MkPostForm.vue';
 import midi_kakiko from '@/components/midi_kakiko/midi_kakiko.vue';
 // import { scroll } from '@/scripts/scroll.js';
 import MkHorizontalSwipe from '@/components/MkHorizontalSwipe.vue';
-import midi_kakiko from '@/components/midi_kakiko/midi_kakiko.vue';
-// import { scroll } from '@/scripts/scroll.js';
 import * as os from '@/os.js';
 import { store } from '@/store.js';
 import { i18n } from '@/i18n.js';

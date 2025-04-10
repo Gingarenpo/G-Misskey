@@ -17,7 +17,7 @@ SPDX-License-Identifier: AGPL-3.0-only
 import isChromatic from 'chromatic/isChromatic';
 import { onMounted, onUnmounted, ref, computed } from 'vue';
 import { i18n } from '@/i18n.js';
-import { dateTimeFormat, dateFormat } from '@/scripts/intl-const.js';
+import { dateTimeFormat } from '@@/js/intl-const.js';
 
 const props = withDefaults(defineProps<{
 	time: Date | string | number | null;
@@ -82,7 +82,7 @@ const custom_relative = computed<string>(() => {
 	
 	let relative_period = props.relative_period == null ? 86400 : props.relative_period;
 	if (ago.value >= relative_period) {
-		return dateFormat.format(_time);
+		return dateTimeFormat.format(_time);
 	}
 	
 	// そうでない場合は単にrelativeの値を返す
