@@ -13370,14 +13370,4 @@ export interface Locale extends ILocale {
          */
         "mfm": string;
     };
-    /**
-     * てすとだよ～ん
-     */
-    "_G_Test1": string;
-    "_G_MIDIKakiko": {
-        /**
-         * テストです。
-         */
-        "placeHolder": string;
-    };
 }
