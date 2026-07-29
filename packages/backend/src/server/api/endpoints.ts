@@ -57,7 +57,6 @@ import * as ep___admin_promo_create from './endpoints/admin/promo/create.js';
 import * as ep___admin_queue_clear from './endpoints/admin/queue/clear.js';
 import * as ep___admin_queue_deliverDelayed from './endpoints/admin/queue/deliver-delayed.js';
 import * as ep___admin_queue_inboxDelayed from './endpoints/admin/queue/inbox-delayed.js';
-import * as ep___admin_queue_promote from './endpoints/admin/queue/promote.js';
 import * as ep___admin_queue_stats from './endpoints/admin/queue/stats.js';
 import * as ep___admin_relays_add from './endpoints/admin/relays/add.js';
 import * as ep___admin_relays_list from './endpoints/admin/relays/list.js';
@@ -227,7 +226,6 @@ import * as ep___i_notificationsGrouped from './endpoints/i/notifications-groupe
 import * as ep___i_pageLikes from './endpoints/i/page-likes.js';
 import * as ep___i_pages from './endpoints/i/pages.js';
 import * as ep___i_pin from './endpoints/i/pin.js';
-import * as ep___i_readAllUnreadNotes from './endpoints/i/read-all-unread-notes.js';
 import * as ep___i_readAnnouncement from './endpoints/i/read-announcement.js';
 import * as ep___i_regenerateToken from './endpoints/i/regenerate-token.js';
 import * as ep___i_registry_getAll from './endpoints/i/registry/get-all.js';
@@ -377,7 +375,6 @@ import * as ep___reversi_showGame from './endpoints/reversi/show-game.js';
 import * as ep___reversi_surrender from './endpoints/reversi/surrender.js';
 import * as ep___reversi_verify from './endpoints/reversi/verify.js';
 
-import * as ep___midi_kakiko from './endpoints/midi_kakiko/midi_kakiko.js';
 
 
 const eps = [
@@ -431,7 +428,6 @@ const eps = [
 	['admin/queue/clear', ep___admin_queue_clear],
 	['admin/queue/deliver-delayed', ep___admin_queue_deliverDelayed],
 	['admin/queue/inbox-delayed', ep___admin_queue_inboxDelayed],
-	['admin/queue/promote', ep___admin_queue_promote],
 	['admin/queue/stats', ep___admin_queue_stats],
 	['admin/relays/add', ep___admin_relays_add],
 	['admin/relays/list', ep___admin_relays_list],
@@ -601,7 +597,6 @@ const eps = [
 	['i/page-likes', ep___i_pageLikes],
 	['i/pages', ep___i_pages],
 	['i/pin', ep___i_pin],
-	['i/read-all-unread-notes', ep___i_readAllUnreadNotes],
 	['i/read-announcement', ep___i_readAnnouncement],
 	['i/regenerate-token', ep___i_regenerateToken],
 	['i/registry/get-all', ep___i_registry_getAll],
@@ -750,8 +745,6 @@ const eps = [
 	['reversi/show-game', ep___reversi_showGame],
 	['reversi/surrender', ep___reversi_surrender],
 	['reversi/verify', ep___reversi_verify],
-
-	['midi_kakiko', ep___midi_kakiko],
 ];
 
 interface IEndpointMetaBase {
