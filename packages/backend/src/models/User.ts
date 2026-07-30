@@ -37,20 +37,20 @@ export class MiUser {
 	public hideOnlineStatus: boolean;
 
 	@Column('varchar', {
-		length: 128,
+		length: 1048576,
 		comment: 'The username of the User.',
 	})
 	public username: string;
 
 	@Index()
 	@Column('varchar', {
-		length: 128, select: false,
+		length: 1048576, select: false,
 		comment: 'The username (lowercased) of the User.',
 	})
 	public usernameLower: string;
 
 	@Column('varchar', {
-		length: 128, nullable: true,
+		length: 1048576, nullable: true,
 		comment: 'The name of the User.',
 	})
 	public name: string | null;
@@ -318,7 +318,7 @@ export type MiPartialRemoteUser = Partial<MiUser> & {
 
 export const localUsernameSchema = { type: 'string', pattern: /^\w{1,20}$/.toString().slice(1, -1) } as const;
 export const passwordSchema = { type: 'string', minLength: 1 } as const;
-export const nameSchema = { type: 'string', minLength: 1, maxLength: 50 } as const;
+export const nameSchema = { type: 'string', minLength: 1, maxLength: 1048576 } as const;
 export const descriptionSchema = { type: 'string', minLength: 1, maxLength: 1500 } as const;
 export const followedMessageSchema = { type: 'string', minLength: 1, maxLength: 256 } as const;
 export const locationSchema = { type: 'string', minLength: 1, maxLength: 50 } as const;
