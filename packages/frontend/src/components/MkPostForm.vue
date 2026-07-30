@@ -944,6 +944,15 @@ function isAnnoying(text: string): boolean {
 		text.includes('$[position');
 }
 
+async function uploadFiles() {
+	await uploader.upload();
+
+	for (const uploadedItem of uploader.items.value.filter(x => x.uploaded != null)) {
+		files.value.push(uploadedItem.uploaded!);
+		uploader.removeItem(uploadedItem);
+	}
+}
+
 async function post(ev?: MouseEvent) {
 	if (useCw.value && (cw.value == null || cw.value.trim() === '')) {
 		os.alert({
